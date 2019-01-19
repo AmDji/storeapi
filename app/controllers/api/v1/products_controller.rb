@@ -3,6 +3,9 @@ class Api::V1::ProductsController < ApplicationController
   def index #/api/v1/products (fetches all products at once)
     @products = Product.all
 
+    #Order data by title
+    @products = Product.order('id').reorder('title')
+
     #Filter for inventory_count
     @products = @products.inventory_count(params[:inventory_count]) if params[:inventory_count]
 
