@@ -2,6 +2,10 @@ class Api::V1::ProductsController < ApplicationController
 
   def index #/api/v1/products (fetches all products at once)
     @products = Product.all
+
+    #Filter for inventory_count
+    @products = @products.inventory_count(params[:inventory_count]) if params[:inventory_count]
+    
     render( {json: @products, status: :ok} )
   end
 
