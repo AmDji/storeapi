@@ -4,10 +4,8 @@ one:
   title: MyString
   price: 9.99
   inventory_count: 1
-  availability: false
 
 two:
   title: MyString
   price: 9.99
   inventory_count: 1
-  availability: false
