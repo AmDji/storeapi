@@ -6,6 +6,9 @@ class Api::V1::ProductsController < ApplicationController
     #Filter for inventory_count
     @products = @products.inventory_count(params[:inventory_count]) if params[:inventory_count]
 
+    # Search by title
+    @products = @products.title(params[:title]) if params[:title]
+
     render( {json: @products, status: :ok} )
   end
 
