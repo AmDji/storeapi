@@ -8,8 +8,8 @@ How to load: (make sure to be in parent directory)
 2. rails db:seed
 3. rails s
 
-(Filter by inventory_count)
+(Filter by inventory_count) /n
 Filter Functionality Example: http://localhost:3000/api/v1/products?inventory_count=3
 
-(Search by title)
+(Search by title) /n
 Search Functionality Example: http://localhost:3000/api/v1/products?title=Blazer
