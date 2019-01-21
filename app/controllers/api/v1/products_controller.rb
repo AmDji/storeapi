@@ -20,9 +20,15 @@ class Api::V1::ProductsController < ApplicationController
     render json: @Product, status: :ok
   end
 
+  #Couldn't get this to work in time for the challenge deadline :( but the idea is there
   def create # POST api/v1/products
-    @product = Product.create(product_params)
-    render json: @product, status: :created
+    @product = @product.title(params[:title]) if params[:title]
+    if @product == nil || @product.inventory_count == 0
+      render json: {status: 'Error', message: params[:title] }, status: :unprocessable_entity
+    else
+      product.decrease_inventory_count
+      render json: {status: 'SUCCESS', message: params[:title] }, status: :ok
+    end
   end
 
   private

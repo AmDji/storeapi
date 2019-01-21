@@ -6,4 +6,13 @@ class Product < ApplicationRecord
   #Search functionality by title
   scope :title, -> (title) { where('title LIKE ?', "%#{title}%") }
 
+  #Function to decrease inventory_count on successful purchase
+  def decrease_inventory_count
+    if inventory_count > 0
+      update(:inventory_count => inventory_count - 1)
+    else
+      inventory_count
+    end
+  end
+
 end
