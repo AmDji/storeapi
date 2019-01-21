@@ -1,24 +1,15 @@
-# README
+# STORE API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby Version 2.3.3
 
-Things you may want to cover:
+How to load: (make sure to be in parent directory)
 
-* Ruby version
+1. rails db:migrate
+2. rails db:seed
+3. rails s
 
-* System dependencies
+(Filter by inventory_count)
+Filter Functionality Example: http://localhost:3000/api/v1/products?inventory_count=3
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+(Search by title)
+Search Functionality Example: http://localhost:3000/api/v1/products?title=Blazer
